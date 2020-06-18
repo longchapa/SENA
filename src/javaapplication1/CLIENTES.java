@@ -56,7 +56,6 @@ public class CLIENTES extends javax.swing.JFrame {
         BtClientes = new javax.swing.JButton();
         BtIngresar = new javax.swing.JButton();
         BtGanancia = new javax.swing.JButton();
-        BtConfigurar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -291,33 +290,29 @@ public class CLIENTES extends javax.swing.JFrame {
             }
         });
 
-        BtGanancia.setText("GANANCIA");
+        BtGanancia.setText("REPORTE");
         BtGanancia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtGananciaActionPerformed(evt);
             }
         });
 
-        BtConfigurar.setText("CONFIGURAR");
-
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(33, 33, 33)
                 .addComponent(BtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(BtFacturar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
-                .addComponent(BtClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(BtIngresar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtFacturar)
+                .addGap(83, 83, 83)
+                .addComponent(BtClientes)
+                .addGap(114, 114, 114)
+                .addComponent(BtIngresar)
+                .addGap(50, 50, 50)
                 .addComponent(BtGanancia)
-                .addGap(45, 45, 45)
-                .addComponent(BtConfigurar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(42, 42, 42))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -328,8 +323,7 @@ public class CLIENTES extends javax.swing.JFrame {
                     .addComponent(BtFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtGanancia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtConfigurar))
+                    .addComponent(BtGanancia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
 
@@ -386,6 +380,8 @@ public class CLIENTES extends javax.swing.JFrame {
 
     private void BtGananciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtGananciaActionPerformed
         // TODO add your handling code here:
+        new reporte().setVisible(true);
+        dispose();
     }//GEN-LAST:event_BtGananciaActionPerformed
 
     private void BtClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtClientesActionPerformed
@@ -496,7 +492,6 @@ public class CLIENTES extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtClientes;
-    private javax.swing.JButton BtConfigurar;
     private javax.swing.JButton BtFacturar;
     private javax.swing.JButton BtGanancia;
     private javax.swing.JButton BtIngresar;

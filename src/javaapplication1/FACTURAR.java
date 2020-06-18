@@ -30,7 +30,6 @@ public class FACTURAR extends javax.swing.JFrame {
             ResultSet resultado = sentencia.executeQuery("select * from productos");
             
             while(resultado.next()){
-                System.out.println(resultado.getObject(1));
                 jComboBox1.addItem(""+resultado.getObject(1));
             }
         }catch(SQLException e){
@@ -59,7 +58,6 @@ public class FACTURAR extends javax.swing.JFrame {
         BtClientes = new javax.swing.JButton();
         BtIngresar = new javax.swing.JButton();
         BtGanancia = new javax.swing.JButton();
-        BtConfigurar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jComboBox1 = new javax.swing.JComboBox<>();
         txtcantidad = new javax.swing.JTextField();
@@ -149,9 +147,12 @@ public class FACTURAR extends javax.swing.JFrame {
             }
         });
 
-        BtGanancia.setText("GANANCIA");
-
-        BtConfigurar.setText("CONFIGURAR");
+        BtGanancia.setText("REPORTE");
+        BtGanancia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtGananciaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -160,17 +161,15 @@ public class FACTURAR extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(BtInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGap(79, 79, 79)
                 .addComponent(BtFacturar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
                 .addComponent(BtClientes)
-                .addGap(53, 53, 53)
+                .addGap(71, 71, 71)
                 .addComponent(BtIngresar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addGap(87, 87, 87)
                 .addComponent(BtGanancia)
-                .addGap(40, 40, 40)
-                .addComponent(BtConfigurar, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(41, 41, 41))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,8 +180,7 @@ public class FACTURAR extends javax.swing.JFrame {
                     .addComponent(BtFacturar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BtIngresar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtGanancia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BtConfigurar))
+                    .addComponent(BtGanancia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 20, Short.MAX_VALUE))
         );
 
@@ -362,6 +360,12 @@ public class FACTURAR extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void BtGananciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtGananciaActionPerformed
+        // TODO add your handling code here:
+        new reporte().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BtGananciaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -399,7 +403,6 @@ public class FACTURAR extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtClientes;
-    private javax.swing.JButton BtConfigurar;
     private javax.swing.JButton BtFacturar;
     private javax.swing.JButton BtGanancia;
     private javax.swing.JButton BtIngresar;
